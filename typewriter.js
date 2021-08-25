@@ -3,11 +3,13 @@ const sentence = "hello there from lighthouse labs";
 let counter = 0;
 
 // Attempt 1 Recurrsion
-const hopeThisWorks1 = function() {
-  if (counter < sentence.length) {
-    process.stdout.write(sentence[counter]);
+const hopeThisWorks1 = function(stringRay) {
+  if (counter < stringRay.length) {
+    process.stdout.write(stringRay[counter]);
     counter++;
-    setTimeout(hopeThisWorks1, 50);
+    setTimeout(() => {
+      hopeThisWorks1(stringRay);
+    }, 50);
   } else {
     process.stdout.write('\n');
   }
